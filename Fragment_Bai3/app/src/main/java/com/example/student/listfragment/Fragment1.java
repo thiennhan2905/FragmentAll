@@ -1,6 +1,7 @@
 package com.example.student.listfragment;
 
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,7 +23,7 @@ public class Fragment1 extends Fragment{
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
         View view = inflater.inflate(R.layout.layout_listfragment,container,false);
 
@@ -45,9 +46,18 @@ public class Fragment1 extends Fragment{
 
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 
-                fragmentTransaction.replace(R.id.frameLayoutList,fragmentDetail);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                Fragment fragment = getFragmentManager().findFragmentById(R.id.detailFragment);
+
+                if (fragment != null && fragment.isInLayout()) {
+                    fragmentTransaction.replace(R.id.frameLayoutList,fragmentDetail);
+                    fragmentTransaction.addToBackStack(null);
+                    fragmentTransaction.commit();
+                } else {
+                    Intent intent = new Intent(getActivity(),ActivityDetailPeople.class);
+                    intent.putExtra("people",people);
+                    startActivity(intent);
+                }
+
             }
         });
         return view;

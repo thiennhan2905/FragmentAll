@@ -28,7 +28,7 @@
         <fragment
             android:id="@+id/detailFragment"
             android:name="com.example.student.listfragment.FragmentDetail"
-            tools:layout="@layout/layout_detailframent"
+            tools:layout="@layout/activity_detail_people"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

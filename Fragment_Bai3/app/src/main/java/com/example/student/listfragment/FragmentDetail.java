@@ -15,7 +15,7 @@ public class FragmentDetail extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View view = inflater.inflate(R.layout.layout_detailframent,container,false);
+        View view = inflater.inflate(R.layout.activity_detail_people,container,false);
 
         tvFullName = (TextView) view.findViewById(R.id.tv_FullName);
         tvAddress = (TextView) view.findViewById(R.id.tv_Address);

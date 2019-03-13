@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlue"
+    android:id="@+id/myActivityMain"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="Main Activity!"
+        android:textSize="40dp" />
+
+    <EditText
+        android:id="@+id/edt_Content"
+        android:layout_marginTop="15dp"
+        android:textColorHint="@color/colorWhite"
+        android:hint="Nhập vào nội dung gợi ý qua frag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_gravity="center"
+        android:text="Add Fragment"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="AddFragment"/>
+    <Button
+        android:layout_gravity="center"
+        android:text="Remove Fragment"
+        android:textSize="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="RemoveFragment"/>
+</LinearLayout>
